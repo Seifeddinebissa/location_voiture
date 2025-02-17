@@ -5,6 +5,9 @@
     <option name="originalFiles">
       <list>
         <option value="$PROJECT_DIR$/Microservices/GestionEntretien/pom.xml" />
+        <option value="$PROJECT_DIR$/Microservices/GestionReservation/pom.xml" />
+        <option value="$PROJECT_DIR$/Microservices/Eureka/pom.xml" />
+        <option value="$PROJECT_DIR$/Microservices/Gateway/pom.xml" />
       </list>
     </option>
   </component>

@@ -21,6 +21,7 @@ public class GatewayApplication {
 		return builder.routes()
 				.route("GestionEntretien",r->r.path("/entretien/**").uri("http://localhost:8080/"))
 				.route("GestionReservation",r->r.path("/reservation/**").uri("http://localhost:8081/"))
+				.route("GestionVehicule",r->r.path("/vehicule/**").uri("http://localhost:8055/"))
 				.build();
 	}
 }

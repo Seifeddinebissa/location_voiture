@@ -8,6 +8,7 @@
         <option value="$PROJECT_DIR$/Microservices/GestionReservation/pom.xml" />
         <option value="$PROJECT_DIR$/Microservices/Eureka/pom.xml" />
         <option value="$PROJECT_DIR$/Microservices/Gateway/pom.xml" />
+        <option value="$PROJECT_DIR$/Microservices/GestionVoiture/pom.xml" />
       </list>
     </option>
   </component>

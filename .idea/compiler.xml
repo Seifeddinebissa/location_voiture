@@ -8,6 +8,7 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="Eureka" />
+        <module name="config-server" />
         <module name="notification" />
         <module name="Gateway" />
         <module name="GestionVehicule" />
@@ -19,6 +20,7 @@
         <processorPath useClasspath="false">
           <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/unknown/lombok-unknown.jar" />
         </processorPath>
+        <module name="GestionPaiement" />
         <module name="GestionEntretien" />
         <module name="GestionReservation" />
       </profile>
@@ -40,6 +42,8 @@
       <module name="Gateway" options="-parameters" />
       <module name="GestionEntretien" options="-parameters" />
       <module name="GestionPaiement" options="-parameters" />
+      <module name="GestionReservation" options="-parameters" />
+      <module name="config-server" options="-parameters" />
       <module name="gateway" options="-parameters" />
       <module name="GestionReservation" options="-parameters" />
       <module name="GestionVehicule" options="-parameters" />

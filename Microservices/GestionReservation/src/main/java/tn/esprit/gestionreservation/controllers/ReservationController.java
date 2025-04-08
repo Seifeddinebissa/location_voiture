@@ -1,39 +1,44 @@
 package tn.esprit.gestionreservation.controllers;
-
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import tn.esprit.gestionreservation.entities.Reservation;
 import tn.esprit.gestionreservation.services.ReservationService;
-
 import java.util.List;
 
 @RestController
-@RequestMapping("reservation")
+@RequestMapping("/reservation")
 public class ReservationController {
+
     @Autowired
     private ReservationService reservationService;
+
+    @Value("${welcome.message:Welcome to Gestion Reservation!}")
+    private String welcomeMessage;
+
+    @GetMapping("/welcome")
+    public String welcome() { return welcomeMessage;}
+
     @GetMapping("/get-all")
     public ResponseEntity<List<Reservation>> getAllReservations() {
-        return new ResponseEntity<>(reservationService.getAllReservation(), HttpStatus.OK);
-    }
-    @GetMapping("/get-by-id")
-    public ResponseEntity<Reservation> getReservationById(@RequestParam("id") Long id) {
-        return new ResponseEntity<>(reservationService.getReservationById(id), HttpStatus.OK);
+        return ResponseEntity.ok(reservationService.getAllReservation());}
 
-    }
+    @GetMapping("/get-by-id/{id}")
+    public ResponseEntity<Reservation> getReservationById(@PathVariable("id") Long id) {
+        return ResponseEntity.ok(reservationService.getReservationById(id));}
+
     @PostMapping("/add")
     public ResponseEntity<Reservation> addReservation(@RequestBody Reservation reservation) {
-        return new ResponseEntity<>(reservationService.addReservation(reservation), HttpStatus.CREATED);
-    }
+        return ResponseEntity.status(HttpStatus.CREATED).body(reservationService.addReservation(reservation));}
+
     @PutMapping("/update")
     public ResponseEntity<Reservation> updateReservation(@RequestBody Reservation reservation) {
-        return new ResponseEntity<>(reservationService.updateReservation(reservation), HttpStatus.OK);
-    }
-    @DeleteMapping("/delete-by-id")
-    public ResponseEntity deleteReservationById(@RequestParam("id") Long id) {
+        return ResponseEntity.ok(reservationService.updateReservation(reservation));}
+
+    @DeleteMapping("/delete-by-id/{id}")
+    public ResponseEntity<String> deleteReservationById(@PathVariable("id") Long id) {
         reservationService.deleteReservation(id);
-        return new ResponseEntity<>("Reservation deleted", HttpStatus.OK);
-    }
+        return ResponseEntity.ok("Reservation deleted successfully"); }
 }

@@ -4,6 +4,7 @@ package com.example.microservice.gestionvehicule.controller;
 import com.example.microservice.gestionvehicule.entities.Vehicule;
 import com.example.microservice.gestionvehicule.services.VehiculeService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -19,6 +20,13 @@ public class VehiculeRestApi {
 
     @Autowired
     private VehiculeService vehiculeService;
+
+    @Value("${welcome.message:Bienvenue par défaut}")
+    private String welcomeMessage;
+
+    @GetMapping("/welcome")
+    public String welcome() {return welcomeMessage;}
+
 
     // CREATE
     @PostMapping

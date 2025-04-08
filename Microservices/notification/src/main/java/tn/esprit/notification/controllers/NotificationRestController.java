@@ -1,6 +1,7 @@
 package tn.esprit.notification.controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.*;
 import tn.esprit.notification.entities.Notification;
 import tn.esprit.notification.services.NotificationService;
@@ -17,6 +18,12 @@ public class NotificationRestController {
     public NotificationRestController(NotificationService notificationService) { // ✅ Constructor-based injection
         this.notificationService = notificationService;
     }
+
+    @Value("${welcome.message:Bienvenue par défaut}")
+    private String welcomeMessage;
+
+    @GetMapping("/welcome")
+    public String welcome() {return welcomeMessage;}
 
     @GetMapping
     public List<Notification> getAllNotifications() {

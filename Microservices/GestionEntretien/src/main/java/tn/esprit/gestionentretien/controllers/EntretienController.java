@@ -16,11 +16,13 @@ public class EntretienController {
     private EntretienService entretienService;
     @GetMapping("/get-all")
     public ResponseEntity<List<Entretien>> getAllEntretien() {
-        return new ResponseEntity<>(entretienService.getAllEntretien(), HttpStatus.OK);
+        return new ResponseEntity<>(entretienService.getAllEntretien(),
+                HttpStatus.OK);
     }
     @GetMapping("/get-by-id")
     public ResponseEntity<Entretien> getEntretienById(@RequestParam("id") Long id) {
-        return new ResponseEntity<>(entretienService.getEntretienById(id), HttpStatus.OK);
+        return new ResponseEntity<>(entretienService.getEntretienById(id),
+                HttpStatus.OK);
     }
     @PostMapping("/add")
     public ResponseEntity<Entretien> addEntretien(@RequestBody Entretien ent) {
@@ -33,6 +35,6 @@ public class EntretienController {
     @DeleteMapping("/delete-by-id")
     public ResponseEntity deleteEntretien(@RequestParam("id") Long id) {
         entretienService.deleteEntretien(id);
-        return new ResponseEntity<>("Successfully deleted",HttpStatus.OK);
+        return new ResponseEntity<>("Successfully deleted", HttpStatus.OK);
     }
 }

@@ -24,4 +24,5 @@ public class Entretien {
     @Enumerated(EnumType.STRING)
     private Status status;
     private Double cost;
+
 }

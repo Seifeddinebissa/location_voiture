@@ -26,12 +26,14 @@ public class EntretienController {
 
     @GetMapping("/get-all")
     public ResponseEntity<List<Entretien>> getAllEntretien() {
-        return new ResponseEntity<>(entretienService.getAllEntretien(), HttpStatus.OK);
+        return new ResponseEntity<>(entretienService.getAllEntretien(),
+                HttpStatus.OK);
     }
 
     @GetMapping("/get-by-id")
     public ResponseEntity<Entretien> getEntretienById(@RequestParam("id") Long id) {
-        return new ResponseEntity<>(entretienService.getEntretienById(id), HttpStatus.OK);
+        return new ResponseEntity<>(entretienService.getEntretienById(id),
+                HttpStatus.OK);
     }
 
     @PostMapping("/add")
@@ -99,3 +101,4 @@ public class EntretienController {
 //        return new ResponseEntity<>("Successfully deleted",HttpStatus.OK);
 //    }
 //}
+}

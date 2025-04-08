@@ -11,7 +11,10 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 
+import lombok.Data;
 
+@Entity
+@Data
 public class Paiement {
     @Id
     @GeneratedValue

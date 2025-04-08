@@ -54,8 +54,6 @@ public class EntretienController {
 }
 
 
-
-
 //package tn.esprit.gestionentretien.controllers;
 //
 //import org.springframework.beans.factory.annotation.Autowired;
@@ -101,4 +99,3 @@ public class EntretienController {
 //        return new ResponseEntity<>("Successfully deleted",HttpStatus.OK);
 //    }
 //}
-}

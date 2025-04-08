@@ -8,6 +8,7 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="Eureka" />
+        <module name="config-server" />
         <module name="Gateway" />
       </profile>
       <profile name="Annotation profile for GestionReservation" enabled="true">

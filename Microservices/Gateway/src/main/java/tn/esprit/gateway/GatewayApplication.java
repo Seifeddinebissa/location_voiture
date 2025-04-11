@@ -18,8 +18,8 @@ public class GatewayApplication {
     @Bean
     public RouteLocator customRouteLocator(RouteLocatorBuilder builder) {
         return builder.routes()
-                .route("keyclock",r->r.path("/users/**")
-                        .uri("lb://keyclock"))
+                .route("GestionReservation",r->r.path("/reservation/**")
+                        .uri("lb://GestionReservation"))
                 .build();
 
 

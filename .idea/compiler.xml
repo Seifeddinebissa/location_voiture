@@ -12,6 +12,15 @@
         <module name="Eureka" />
         <module name="Gateway" />
       </profile>
+      <profile name="Annotation profile for GestionReservation" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="false">
+          <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/unknown/lombok-unknown.jar" />
+        </processorPath>
+        <module name="GestionReservation" />
+      </profile>
     </annotationProcessing>
   </component>
   <component name="JavacSettings">
@@ -19,6 +28,7 @@
       <module name="ConfigServer" options="-parameters" />
       <module name="Eureka" options="-parameters" />
       <module name="Gateway" options="-parameters" />
+      <module name="GestionReservation" options="-parameters" />
       <module name="keyclock" options="-parameters" />
     </option>
   </component>

@@ -7,20 +7,19 @@ import org.springframework.cloud.gateway.route.RouteLocator;
 import org.springframework.cloud.gateway.route.builder.RouteLocatorBuilder;
 import org.springframework.context.annotation.Bean;
 
-@EnableDiscoveryClient
 @SpringBootApplication
+@EnableDiscoveryClient
 public class GatewayApplication {
 
-	public static void main(String[] args) {
-		SpringApplication.run(GatewayApplication.class, args);
-	}
+    public static void main(String[] args) {
+        SpringApplication.run(GatewayApplication.class, args);
+    }
 
-	@Bean
-	public RouteLocator customRouteLocator(RouteLocatorBuilder builder) {
-		return builder.routes()
-				.route("event",r->r.path("/events/**")
-						.uri("http://localhost:8098"))
- 			.build();
-	}
-
+    @Bean
+    public RouteLocator customRouteLocator(RouteLocatorBuilder builder) {
+        return builder.routes()
+                .route("entretien",r->r.path("/api/**")
+                        .uri("lb://GestionEntretien"))
+                .build();
+    }
 }

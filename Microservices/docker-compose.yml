@@ -1,0 +1,67 @@
+version: '3.8'
+services:
+  mysql:
+    image: mysql:latest
+    container_name: mysql
+    networks:
+      - my-network
+    environment:
+      - MYSQL_ALLOW_EMPTY_PASSWORD=true
+      - MYSQL_DATABASE=entretien_voitureDB
+    volumes:
+      - mysql-data:/var/lib/mysql
+    ports:
+      - "3306:3306"  # Optional: only if you need to access MySQL from the host
+
+  gestion-entretien:
+    image: gestion_entretien:latest
+    container_name: gestion_entretien
+    networks:
+      - my-network
+    ports:
+      - "8088:8088"  # Maps to server.port=8088
+    depends_on:
+      - mysql
+      - eureka
+      - config-server
+      - gateway
+    environment:
+      - SPRING_CONFIG_IMPORT=optional:configserver:http://config-server:8888
+      - SPRING_CLOUD_CONFIG_ENABLED=true
+      - MANAGEMENT_ENDPOINTS_WEB_EXPOSURE_INCLUDE=refresh,health,info
+
+  eureka:
+    image: eureka:latest
+    container_name: eureka
+    networks:
+      - my-network
+    ports:
+      - "8765:8765"  # Eureka typically runs on 8765
+    depends_on:
+      - config-server
+
+  config-server:
+    image: config_server:latest
+    container_name: config_server
+    networks:
+      - my-network
+    ports:
+      - "8888:8888"  # Config Server typically runs on 8888
+
+  gateway:
+    image: gateway:latest
+    container_name: gateway
+    networks:
+      - my-network
+    ports:
+      - "8080:8080"  # Adjust based on your gateway's port
+    depends_on:
+      - eureka
+      - config-server
+
+networks:
+  my-network:
+    driver: bridge
+
+volumes:
+  mysql-data:

@@ -1,10 +1,10 @@
-package tn.esprit.gateway;
+package tn.esprit.configserver;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class GatewayApplicationTests {
+class ConfigServerApplicationTests {
 
     @Test
     void contextLoads() {

@@ -10,7 +10,7 @@ import tn.esprit.gestionentretien.services.EntretienService;
 import java.util.List;
 
 @RestController
-@RequestMapping("entretien")
+@RequestMapping("/api/entretien")
 public class EntretienController {
     @Autowired
     private EntretienService entretienService;

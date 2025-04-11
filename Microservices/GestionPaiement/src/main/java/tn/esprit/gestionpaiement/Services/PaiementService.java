@@ -9,21 +9,13 @@ import java.util.List;
 import java.util.Optional;
 
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
-import tn.esprit.gestionpaiement.Entities.Paiement;
-import tn.esprit.gestionpaiement.Repositories.PaiementRepository;
-
-import java.util.List;$
-
 @Service
 public class PaiementService {
-    @Autowired
-    private PaiementRepository paiementRepository;
 
+    private PaiementRepository paiementRepository;
+public PaiementService(PaiementRepository paiementRepository) {this.paiementRepository = paiementRepository;}
     // Créer un paiement
-    public Paiement createPaiement(Double montant, Mode mode) {
-        Paiement paiement = new Paiement(montant, mode, false);
+    public Paiement createPaiement(Paiement paiement) {
         return paiementRepository.save(paiement); }
 
     // Mettre à jour un paiement
@@ -80,20 +72,6 @@ public Paiement rembourserPaiement(Long idPaiement) {
                 " - Mode: " + paiement.getMode() + " - Statut: " + (paiement.isTraited() ? "Traité" : "Non traité");
     }
 
-//    public Paiement getPaiementById(Long idPaiement) {
-//        return paiementRepository.findById(idPaiement).get();
-//    }
-   // public Paiement getPaiementByMontant(Float montant) {return paiementRepository.findByMontant(montant).get();}
-   //  public Paiement updatePaiement(  Paiement paiement) {return paiementRepository.save(paiement);}
-  //  public void deletePaiement(Long idPaiement) { paiementRepository.deleteById(idPaiement);}
-
-    public List<Paiement> getAllPaiement(){return paiementRepository.findAll();}
-
-    public Paiement getPaiementById(Long idPaiement) {
-        return paiementRepository.findById(idPaiement).get();
-    }
-   // public Paiement getPaiementByMontant(Float montant) {return paiementRepository.findByMontant(montant).get();}
     public Paiement addPaiement(Paiement paiement) {return paiementRepository.save(paiement);}
     public Paiement updatePaiement(  Paiement paiement) {return paiementRepository.save(paiement);}
-    public void deletePaiement(Long idPaiement) { paiementRepository.deleteById(idPaiement);}
-}
+ }

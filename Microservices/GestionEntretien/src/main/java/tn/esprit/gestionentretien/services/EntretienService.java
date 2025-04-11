@@ -10,12 +10,11 @@ import java.util.List;
 @Service
 public class EntretienService {
     @Autowired
-    private EntretienRepository entretienRepository;
-
+    private final EntretienRepository entretienRepository;
+    public EntretienService(EntretienRepository entretienRepository) {this.entretienRepository = entretienRepository;}
     public List<Entretien> getAllEntretien() {
         return entretienRepository.findAll();
     }
-
     public Entretien getEntretienById(Long id) {
         return entretienRepository.findById(id).get();
     }

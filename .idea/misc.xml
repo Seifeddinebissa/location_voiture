@@ -9,10 +9,10 @@
         <option value="$PROJECT_DIR$/Microservices/GestionReservation/pom.xml" />
         <option value="$PROJECT_DIR$/Microservices/Eureka/pom.xml" />
         <option value="$PROJECT_DIR$/Microservices/Gateway/pom.xml" />
-        <option value="$PROJECT_DIR$/Microservices/GestionPaiement/pom.xml" />
         <option value="$PROJECT_DIR$/config-server/pom.xml" />
         <option value="$PROJECT_DIR$/Microservices/GestionVehicule/pom.xml" />
         <option value="$PROJECT_DIR$/Microservices/notification/pom.xml" />
+        <option value="$PROJECT_DIR$/config/config-server/pom.xml" />
       </list>
     </option>
   </component>

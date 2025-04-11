@@ -9,17 +9,18 @@ import tn.esprit.gestionreservation.services.ReservationService;
 import java.util.List;
 
 @RestController
-@RequestMapping("/reservation")
+@RequestMapping("/GestionReservation")
 public class ReservationController {
 
     @Autowired
     private ReservationService reservationService;
 
-    @Value("${welcome.message:Welcome to Gestion Reservation!}")
-    private String welcomeMessage;
+    @PostMapping("/add")
+    public ResponseEntity<Reservation> addReservation(@RequestBody Reservation reservation) {
+        return ResponseEntity.status(HttpStatus.CREATED).body(reservationService.addReservation(reservation));}
 
-    @GetMapping("/welcome")
-    public String welcome() { return welcomeMessage;}
+
+
 
     @GetMapping("/get-all")
     public ResponseEntity<List<Reservation>> getAllReservations() {
@@ -29,9 +30,11 @@ public class ReservationController {
     public ResponseEntity<Reservation> getReservationById(@PathVariable("id") Long id) {
         return ResponseEntity.ok(reservationService.getReservationById(id));}
 
-    @PostMapping("/add")
-    public ResponseEntity<Reservation> addReservation(@RequestBody Reservation reservation) {
-        return ResponseEntity.status(HttpStatus.CREATED).body(reservationService.addReservation(reservation));}
+    @Value("${welcome.message:Welcome to Gestion Reservation!}")
+    private String welcomeMessage;
+
+    @GetMapping("/welcome")
+    public String welcome() { return welcomeMessage;}
 
     @PutMapping("/update")
     public ResponseEntity<Reservation> updateReservation(@RequestBody Reservation reservation) {

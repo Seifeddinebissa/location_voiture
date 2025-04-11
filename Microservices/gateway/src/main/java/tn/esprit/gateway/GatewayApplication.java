@@ -16,11 +16,16 @@ public class GatewayApplication {
 	}
 
 	@Bean
-	public RouteLocator customRouteLocator(RouteLocatorBuilder builder) {
-		return builder.routes()
-				.route("event",r->r.path("/events/**")
-						.uri("http://localhost:8098"))
- 			.build();
+	public RouteLocator customRouteLocator(RouteLocatorBuilder builder){
+
+		return builder.routes().route("GestionEntretien",r->r.path("/entretien/**").uri("lb://GestionEntretien"))
+				.route("GestionPaiement",r->r.path("/Gestion_Paiement/**").uri("lb://GestionPaiement"))
+				.route("GestionReservation",r->r.path("/reservation/**").uri("lb://GestionReservation"))
+				.route("GestionVehicule",r->r.path("/vehicules/**").uri("lb://GestionVehicule"))
+				.route("notification",r->r.path("/notifications/**").uri("lb://notification"))
+
+				.build();
 	}
+
 
 }

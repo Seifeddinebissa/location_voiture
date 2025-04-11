@@ -15,9 +15,8 @@ public class NotificationRestController {
     private final NotificationService notificationService;
 
     @Autowired
-    public NotificationRestController(NotificationService notificationService) { // ✅ Constructor-based injection
-        this.notificationService = notificationService;
-    }
+    public NotificationRestController(NotificationService notificationService) {
+        this.notificationService = notificationService; }
 
     @Value("${welcome.message:Bienvenue par défaut}")
     private String welcomeMessage;
@@ -25,7 +24,7 @@ public class NotificationRestController {
     @GetMapping("/welcome")
     public String welcome() {return welcomeMessage;}
 
-    @GetMapping
+    @GetMapping("/list")
     public List<Notification> getAllNotifications() {
         return notificationService.getAllNotifications();
     }

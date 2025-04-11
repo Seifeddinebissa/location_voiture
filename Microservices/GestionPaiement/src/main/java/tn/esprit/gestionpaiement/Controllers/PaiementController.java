@@ -18,21 +18,23 @@ import java.util.List;
 @RequestMapping("/Gestion_Paiement")
 public class PaiementController {
 
-    @Autowired
-    private PaiementService paiementService;
 
-    @Value("${welcome.message:Welcome to Gestion Paiement!}")
-    private String welcomeMessage;
+    private final PaiementService paiementService;
 
-    @GetMapping("/welcome")
-    public String welcome() {
-        return welcomeMessage;
-    }
+    public PaiementController(PaiementService paiementService) {this.paiementService = paiementService;}
+//
+//    @Value("${welcome.message:Welcome to Gestion Paiement!}")
+//    private String welcomeMessage;
+//
+//    @GetMapping("/welcome")
+//    public String welcome() {
+//        return welcomeMessage;
+//    }
 
-    // Créer un paiement
-    @PostMapping("createPaiement")
-    public ResponseEntity<Paiement> createPaiement(@RequestParam Double montant, @RequestParam Mode mode) {
-        return ResponseEntity.ok(paiementService.createPaiement(montant, mode));
+    @PostMapping("/createPaiement")
+    public ResponseEntity<Paiement> createPaiement(@RequestBody Paiement paiement) {
+        Paiement saved = paiementService.createPaiement(paiement);
+        return ResponseEntity.ok(saved);
     }
 
     // Mettre à jour un paiement (typo corrected: "updatePatement" -> "updatePaiement")
@@ -93,10 +95,10 @@ public class PaiementController {
     public ResponseEntity<List<Paiement>> getAllPaiement() {
         return new ResponseEntity<>(paiementService.getAllPaiement(), HttpStatus.OK);}
 
-    @GetMapping("/get-by-id")
-    public ResponseEntity<Paiement> getPaiementById(@RequestParam("id") Long idPaiement) {
-        return new ResponseEntity<>(paiementService.getPaiementById(idPaiement), HttpStatus.OK);
-    }
+//    @GetMapping("/get-by-id")
+//    public ResponseEntity<Paiement> getPaiementById(@RequestParam("id") Long idPaiement) {
+//        return new ResponseEntity<>(paiementService.getPaiementById(idPaiement), HttpStatus.OK);
+//    }
 
  @PostMapping("/{add-Paiement}")
     public ResponseEntity<Paiement>addPaiement(@RequestBody Paiement paiement) {
@@ -106,8 +108,8 @@ public class PaiementController {
     public ResponseEntity<Paiement> updatePaiement(@RequestBody Paiement paiement) {
     return new ResponseEntity<>(paiementService.updatePaiement(paiement), HttpStatus.OK); }
 
- @DeleteMapping("/delete-Paiement")
-    public ResponseEntity deletePaiement(@RequestParam("idPaiement" )Long idPaiement)  {paiementService.deletePaiement(idPaiement);
-    return new ResponseEntity<>("Deleted Successfully " ,HttpStatus.OK); }
+// @DeleteMapping("/delete-Paiement")
+//    public ResponseEntity deletePaiement(@RequestParam("idPaiement" )Long idPaiement)  {paiementService.deletePaiement(idPaiement);
+//    return new ResponseEntity<>("Deleted Successfully " ,HttpStatus.OK); }
 
 }

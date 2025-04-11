@@ -2,28 +2,28 @@ package tn.esprit.gestionreservation.entities;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import lombok.Data;
 
 import java.util.Date;
+@Data
 
 @Entity
 public class Reservation {
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private Date start_date;
     private Date end_date;
     private  String status;
 
-    public Reservation() {
-    }
-
+    public Reservation() {}
     public Reservation(Long id, Date start_date, Date end_date, String status) {
         this.id = id;
         this.start_date = start_date;
         this.end_date = end_date;
-        this.status = status;
-    }
+        this.status = status;}
 
     public Long getId() {
         return id;

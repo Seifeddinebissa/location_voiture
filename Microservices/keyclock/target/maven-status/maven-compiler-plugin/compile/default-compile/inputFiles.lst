@@ -1,0 +1,11 @@
+/Users/macbook/Desktop/keyclock/src/main/java/com/example/keyclock/KeyclockApplication.java
+/Users/macbook/Desktop/keyclock/src/main/java/com/example/keyclock/Models/UserRecord.java
+/Users/macbook/Desktop/keyclock/src/main/java/com/example/keyclock/SecurityConfiguration/keycloakConfig.java
+/Users/macbook/Desktop/keyclock/src/main/java/com/example/keyclock/Service/GroupService.java
+/Users/macbook/Desktop/keyclock/src/main/java/com/example/keyclock/Service/RoleService.java
+/Users/macbook/Desktop/keyclock/src/main/java/com/example/keyclock/Service/UserIml.java
+/Users/macbook/Desktop/keyclock/src/main/java/com/example/keyclock/Service/UserService.java
+/Users/macbook/Desktop/keyclock/src/main/java/com/example/keyclock/controllers/APIController.java
+/Users/macbook/Desktop/keyclock/src/main/java/com/example/keyclock/controllers/DemoController.java
+/Users/macbook/Desktop/keyclock/src/main/java/com/example/keyclock/controllers/JwtAuthConverter.java
+/Users/macbook/Desktop/keyclock/src/main/java/com/example/keyclock/controllers/SecurityConfig.java

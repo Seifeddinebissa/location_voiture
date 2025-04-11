@@ -1,6 +1,0 @@
-/Users/mohamedbennari/Documents/location_voiture/Microservices/notification/src/main/java/tn/esprit/notification/NotificationApplication.java
-/Users/mohamedbennari/Documents/location_voiture/Microservices/notification/src/main/java/tn/esprit/notification/controllers/NotificationRestController.java
-/Users/mohamedbennari/Documents/location_voiture/Microservices/notification/src/main/java/tn/esprit/notification/entities/Notification.java
-/Users/mohamedbennari/Documents/location_voiture/Microservices/notification/src/main/java/tn/esprit/notification/enums/TypeNotification.java
-/Users/mohamedbennari/Documents/location_voiture/Microservices/notification/src/main/java/tn/esprit/notification/repositories/NotificationRepository.java
-/Users/mohamedbennari/Documents/location_voiture/Microservices/notification/src/main/java/tn/esprit/notification/services/NotificationService.java

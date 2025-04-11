@@ -1,23 +1,29 @@
-keyclock Microservice
-A Spring Boot microservice for managing users in the application,integrated with Keycloak for authentication and authorization.
+# keycloak Microservice
 
-Built with:
+A Spring Boot microservice for managing users in the application, integrated with Keycloak for authentication and authorization.
 
-keyclock
-Spring Boot 3.4.3
-Java 17
-Maven (dependency management)
+**Built with:**
+- Spring Boot 3.4.3
+- Java 17
+- keycloak
+- Maven (dependency management)
+
+## Prerequisites
 
 Ensure you have these installed:
+- **Java 17**: For running the application.
+- **Maven 3.8+**: For building and managing dependencies.
+- **Docker**: For containerization.
+- **Docker Desktop**: Optional, for easier container management.
 
-Java 17: For running the application.
-Maven 3.8+: For building and managing dependencies.
-Docker: For containerization.
-Docker Desktop: Optional, for easier container management.
-Getting Started
-Clone the Repository
-git clone <repository-url>
-cd keyclock
+## Getting Started
 
-Authors
-Abidi Mohamed Amine
+### Clone the Repository
+
+```bash
+git clone https://github.com/Seifeddinebissa/location_voiture.git
+cd keclock
+```
+## Authors
+
+- [Abidi Mohamed Amine](https://github.com/Amineabidi96)

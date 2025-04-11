@@ -4,5 +4,6 @@
     <file url="file://$PROJECT_DIR$/Microservices/ConfigServer/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/Microservices/Eureka/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/Microservices/Gateway/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Microservices/keyclock/src/main/java" charset="UTF-8" />
   </component>
 </project>

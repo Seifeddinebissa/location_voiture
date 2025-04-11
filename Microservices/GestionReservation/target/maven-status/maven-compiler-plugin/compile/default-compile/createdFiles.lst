@@ -1,0 +1,5 @@
+tn\esprit\gestionreservation\repositories\ReservationRepository.class
+tn\esprit\gestionreservation\entities\Reservation.class
+tn\esprit\gestionreservation\services\ReservationService.class
+tn\esprit\gestionreservation\controllers\ReservationController.class
+tn\esprit\gestionreservation\GestionReservationApplication.class

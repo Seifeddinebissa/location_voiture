@@ -1,0 +1,11 @@
+com/example/keyclock/Models/UserRecord.class
+com/example/keyclock/SecurityConfiguration/keycloakConfig.class
+com/example/keyclock/Service/UserIml.class
+com/example/keyclock/Service/RoleService.class
+com/example/keyclock/Service/UserService.class
+com/example/keyclock/controllers/DemoController.class
+com/example/keyclock/Service/GroupService.class
+com/example/keyclock/controllers/JwtAuthConverter.class
+com/example/keyclock/KeyclockApplication.class
+com/example/keyclock/controllers/APIController.class
+com/example/keyclock/controllers/SecurityConfig.class

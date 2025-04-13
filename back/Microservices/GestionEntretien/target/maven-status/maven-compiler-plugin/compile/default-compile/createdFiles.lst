@@ -1,0 +1,7 @@
+tn\esprit\gestionentretien\GestionEntretienApplication.class
+tn\esprit\gestionentretien\controllers\EntretienController.class
+tn\esprit\gestionentretien\enums\TypeEntretien.class
+tn\esprit\gestionentretien\services\EntretienService.class
+tn\esprit\gestionentretien\entities\Entretien.class
+tn\esprit\gestionentretien\enums\Status.class
+tn\esprit\gestionentretien\repositorys\EntretienRepository.class

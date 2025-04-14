@@ -14,6 +14,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Objects;
+
 @Slf4j
 @RequiredArgsConstructor
 @Service
@@ -23,45 +24,54 @@ public class UserIml implements UserService {
     private String realm;
     private final Keycloak keycloak;
 
-
     @Override
     public void createUser(UserRecord newUserRecord) {
+        UsersResource usersResource = getUsersResource();
 
-        UserRepresentation userRepresentation= new UserRepresentation();
+        // Check for duplicate username
+        List<UserRepresentation> existingUsers = usersResource.search(newUserRecord.username(), null, null, null, null, null);
+        if (existingUsers.stream().anyMatch(user -> user.getUsername().equalsIgnoreCase(newUserRecord.username()))) {
+            throw new IllegalArgumentException("Username already exists: " + newUserRecord.username());
+        }
+
+        // Check for duplicate email
+        existingUsers = usersResource.search(null, null, null, newUserRecord.email(), null, null);
+        if (existingUsers.stream().anyMatch(user -> user.getEmail().equalsIgnoreCase(newUserRecord.email()))) {
+            throw new IllegalArgumentException("Email already exists: " + newUserRecord.email());
+        }
+
+        UserRepresentation userRepresentation = new UserRepresentation();
         userRepresentation.setEnabled(true);
         userRepresentation.setFirstName(newUserRecord.firstName());
         userRepresentation.setLastName(newUserRecord.lastName());
         userRepresentation.setUsername(newUserRecord.username());
-        userRepresentation.setEmail(newUserRecord.username());
-        userRepresentation.setEmailVerified(false);
+        userRepresentation.setEmail(newUserRecord.email());
+        userRepresentation.setEmailVerified(true);
 
-        CredentialRepresentation credentialRepresentation=new CredentialRepresentation();
+        CredentialRepresentation credentialRepresentation = new CredentialRepresentation();
         credentialRepresentation.setValue(newUserRecord.password());
         credentialRepresentation.setType(CredentialRepresentation.PASSWORD);
+        credentialRepresentation.setTemporary(false);
 
         userRepresentation.setCredentials(List.of(credentialRepresentation));
 
-        UsersResource usersResource = getUsersResource();
-
         Response response = usersResource.create(userRepresentation);
 
-
-        if(!Objects.equals(201,response.getStatus())){
-
-            throw new RuntimeException("Status code "+response.getStatus());
+        if (!Objects.equals(201, response.getStatus())) {
+            throw new RuntimeException("Failed to create user: Status code " + response.getStatus());
         }
 
-        log.info("New user has bee created");
-
-
+        log.info("New user created: {}", newUserRecord.username());
     }
-
-
 
     @Override
     public void deleteUser(String userId) {
         UsersResource usersResource = getUsersResource();
-        usersResource.delete(userId);
+        Response response = usersResource.delete(userId);
+        if (!Objects.equals(204, response.getStatus())) {
+            throw new RuntimeException("Failed to delete user: Status code " + response.getStatus());
+        }
+        log.info("User deleted: {}", userId);
     }
 
     @Override
@@ -69,11 +79,18 @@ public class UserIml implements UserService {
         UsersResource usersResource = getUsersResource();
         return usersResource.get(userId);
     }
-    private UsersResource getUsersResource(){
 
-        return keycloak.realm(realm).users();
+    @Override
+    public UserRepresentation getUserDetails(String userId) {
+        UserResource userResource = getUsersResource().get(userId);
+        UserRepresentation userRepresentation = userResource.toRepresentation();
+        if (userRepresentation == null) {
+            throw new RuntimeException("User not found: " + userId);
+        }
+        return userRepresentation;
     }
 
-
-
+    private UsersResource getUsersResource() {
+        return keycloak.realm(realm).users();
+    }
 }

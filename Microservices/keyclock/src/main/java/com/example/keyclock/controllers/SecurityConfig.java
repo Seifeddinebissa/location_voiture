@@ -10,6 +10,11 @@ import org.springframework.security.config.annotation.web.configuration.EnableWe
 import org.springframework.security.config.annotation.web.configuration.WebSecurityCustomizer;
 import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.web.SecurityFilterChain;
+import org.springframework.web.cors.CorsConfiguration;
+import org.springframework.web.cors.CorsConfigurationSource;
+import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
+
+import java.util.List;
 
 @Configuration
 @EnableWebSecurity
@@ -21,54 +26,46 @@ public class SecurityConfig {
 
     @Bean
     public WebSecurityCustomizer webSecurityCustomizer() {
-
-        return (web) -> {
-            web.ignoring().requestMatchers(
-                    HttpMethod.POST,
-                    "/public/**",
-                    "/users"
-            );
-            web.ignoring().requestMatchers(
-                    HttpMethod.GET,
-                    "/public/**"
-            );
-            web.ignoring().requestMatchers(
-                    HttpMethod.DELETE,
-                    "/public/**",
-                    "/users/{id}"
-            );
-            web.ignoring().requestMatchers(
-                    HttpMethod.PUT,
-                    "/public/**",
-                    "/users/{id}/send-verification-email",
-                    "/users/forgot-password"
-
-            );
-            web.ignoring().requestMatchers(
-                            HttpMethod.OPTIONS,
-                            "/**"
-                    )
-                    .requestMatchers("/v3/api-docs/**", "/configuration/**", "/swagger-ui/**",
-                            "/swagger-resources/**", "/swagger-ui.html", "/webjars/**", "/api-docs/**");
-
-        };
+        return (web) -> web.ignoring()
+                .requestMatchers(HttpMethod.POST, "/auth/users", "/auth/users/logout")
+                .requestMatchers(HttpMethod.GET, "/auth/public/**", "/auth/login")
+                .requestMatchers(HttpMethod.DELETE, "/auth/users/{id}")
+                // Removed .requestMatchers(HttpMethod.OPTIONS, "/**")
+                .requestMatchers("/v3/api-docs/**", "/configuration/**", "/swagger-ui/**",
+                        "/swagger-resources/**", "/swagger-ui.html", "/webjars/**", "/api-docs/**");
     }
-
 
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity httpSecurity) throws Exception {
-
         return httpSecurity
+                .cors(cors -> cors.configurationSource(corsConfigurationSource()))
+                .csrf(csrf -> csrf.disable())
                 .authorizeHttpRequests(auth -> auth
-                        .anyRequest()
-                        .authenticated()
+                        .requestMatchers(HttpMethod.OPTIONS, "/**").permitAll() // Explicitly allow OPTIONS requests
+                        .requestMatchers("/auth/login", "/auth/users", "/auth/public/**").permitAll()
+                        .anyRequest().permitAll()
+                )
+                .oauth2Login(oauth2 -> oauth2
+                        .loginPage("/auth/oauth2/authorization/keycloak")
+                        .defaultSuccessUrl("/auth/home", true)
                 )
                 .oauth2ResourceServer(oauth2 -> oauth2
-                        .jwt(jwt -> jwt
-                                .jwtAuthenticationConverter(jwtAuthConverter)
-                        )
+                        .jwt(jwt -> jwt.jwtAuthenticationConverter(jwtAuthConverter))
                 )
                 .sessionManagement(sess -> sess.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
                 .build();
+    }
+
+    @Bean
+    public CorsConfigurationSource corsConfigurationSource() {
+        CorsConfiguration configuration = new CorsConfiguration();
+        configuration.setAllowedOrigins(List.of("http://localhost:4200"));
+        configuration.setAllowedMethods(List.of("GET", "POST", "PUT", "DELETE", "OPTIONS"));
+        configuration.setAllowedHeaders(List.of("*"));
+        configuration.setAllowCredentials(true);
+        configuration.setMaxAge(3600L); // Cache preflight response for 1 hour
+        UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
+        source.registerCorsConfiguration("/**", configuration);
+        return source;
     }
 }

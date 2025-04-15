@@ -6,7 +6,7 @@ A Spring Boot microservice dedicated to managing reservations in a car rental ap
 
 This microservice is part of a broader Car Rental Management System, built using a microservices architecture. The Reservation Service is responsible for:
 
--**Creating and managing vehicle reservations** 
+- **Creating and managing vehicle reservations** 
 - **Validating reservation periods**  
 - **Checking car availability**  
 - **Assigning reservations to customers** 
@@ -15,10 +15,10 @@ This microservice is part of a broader Car Rental Management System, built using
 
 Throughout the training, students will work with:  
 
--**Java 17: For running the application.**  
--**Maven 3.8+: For building and managing dependencies.** 
--**Docker: For containerization.** 
--**Docker Desktop: Optional, for easier container management.**  
+- **Java 17: For running the application.**  
+- **Maven : For building and managing dependencies.** 
+- **Docker: For containerization.** 
+- **Docker Desktop: Optional, for easier container management.**  
 
 ## 🚀 Getting Started
 

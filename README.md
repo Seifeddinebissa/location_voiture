@@ -27,7 +27,8 @@ Throughout the training, students will work with:
 ```bash
 git clone https://github.com/Arij-Abdellaoui/location_voiture.git
 cd reservation
-👩‍💻 Author
+```
+## 👩‍💻 Author
 
 • ✍️ Arij Abdellaoui
 

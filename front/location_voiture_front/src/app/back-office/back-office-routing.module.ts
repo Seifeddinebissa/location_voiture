@@ -1,13 +1,15 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { BackOfficeComponent } from './back-office.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
-
+import { ReservationListComponent } from './dashboard/reservation-list/reservation-list.component';
+import { BackOfficeComponent } from './back-office.component';
 const routes: Routes = [
   {
     path: '',
     component: BackOfficeComponent,
     children: [
+      { path: 'reservations', component: ReservationListComponent },
+
       {
         path: '',
         redirectTo: 'dashboard',
@@ -16,9 +18,11 @@ const routes: Routes = [
       {
         path: 'dashboard',
         component: DashboardComponent
-      }
+      },
     ]
-  }
+
+  },
+  
 ];
 
 @NgModule({

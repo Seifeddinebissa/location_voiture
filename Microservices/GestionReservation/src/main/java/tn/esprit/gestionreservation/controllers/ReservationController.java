@@ -10,7 +10,9 @@ import tn.esprit.gestionreservation.services.ReservationService;
 import java.util.List;
 
 @RestController
+
 @RequestMapping("reservation")
+@CrossOrigin(origins = "http://localhost:4200")
 public class ReservationController {
     @Autowired
     private ReservationService reservationService;

@@ -1,0 +1,171 @@
+
+services:
+  eureka:
+    build: ./Eureka
+    image: backend-eureka:latest
+    container_name: eureka-server
+    ports:
+      - "8765:8765"
+    networks:
+      - microservices-network
+
+  gateway:
+    build: ./Gateway
+    image: backend-gateway:latest
+    container_name: gateway-service
+    ports:
+      - "8065:8065"
+    depends_on:
+      - eureka
+    environment:
+      - EUREKA_CLIENT_SERVICEURL_DEFAULTZONE=http://eureka:8765/eureka/
+    networks:
+      - microservices-network
+
+  configserver:
+    build: ./config-server
+    image: configserver:latest
+    container_name: configservercontainer
+    ports:
+      - "8888:8888"
+    depends_on:
+      - eureka
+      - gateway
+    environment:
+      - EUREKA_CLIENT_SERVICEURL_DEFAULTZONE=http://eureka:8765/eureka/
+    networks:
+      - microservices-network
+  db:
+    image: mysql:8.0
+    command: --default-authentication-plugin=mysql_native_password
+    environment:
+      - MYSQL_ROOT_PASSWORD=password
+      - MYSQL_DATABASE=location_db
+    ports:
+      - "3306:3306"
+    networks:
+      - microservices-network
+
+  gestion-entretien:
+    build: ./GestionEntretien
+    image: gestionentretien:latest
+    container_name: gestionentretien
+    ports:
+      - "8088:8088"
+    depends_on:
+      - eureka
+      - gateway
+      - configserver
+    environment:
+      - EUREKA_CLIENT_SERVICEURL_DEFAULTZONE=http://eureka:8765/eureka/
+    networks:
+      - microservices-network
+
+  gestion-paiement:
+    build: ./GestionPaiement
+    image: gestionpaiement:latest
+    container_name: gestionpaiement
+    ports:
+      - "8884:8884"
+    depends_on:
+      - eureka
+      - gateway
+      - configserver
+    environment:
+      - EUREKA_CLIENT_SERVICEURL_DEFAULTZONE=http://eureka:8765/eureka/
+    networks:
+      - microservices-network
+
+  gestion-reclamation :
+    build: ./GestionReclamation
+    image: gestionreclamation:latest
+    container_name: gestionreclamation
+    ports:
+      - "8881:8881"
+    depends_on:
+      - eureka
+      - gateway
+      - configserver
+    environment:
+      - EUREKA_CLIENT_SERVICEURL_DEFAULTZONE=http://eureka:8765/eureka/
+    networks:
+      - microservices-network
+
+  gestion-reservation:
+    build: ./GestionReservation
+    image: gestionreservation:latest
+    container_name: gestionreservation
+    ports:
+      - "8860:8860"
+    depends_on:
+      - eureka
+      - gateway
+      - configserver
+    environment:
+      - EUREKA_CLIENT_SERVICEURL_DEFAULTZONE=http://eureka:8765/eureka/
+    networks:
+      - microservices-network
+
+  gestion-vehicule:
+    build: ./GestionVehicule
+    image: gestionvehicule:latest
+    container_name: gestionvehicule
+    ports:
+      - "8855:8855"
+    depends_on:
+      - eureka
+      - gateway
+      - configserver
+    environment:
+      - EUREKA_CLIENT_SERVICEURL_DEFAULTZONE=http://eureka:8765/eureka/
+    networks:
+      - microservices-network
+
+  gestion-notification:
+    build: ./notification
+    image: gestionnotificaion:latest
+    container_name: gestionnotificaion
+    ports:
+      - "8082:8082"
+    depends_on:
+      - eureka
+      - gateway
+      - configserver
+    environment:
+      - EUREKA_CLIENT_SERVICEURL_DEFAULTZONE=http://eureka:8765/eureka/
+    networks:
+      - microservices-network
+
+  keycloak:
+    build: ./keyclock
+    image: keycloak:latest
+    container_name: keycloak
+    ports:
+      - "8087:8087"
+    depends_on:
+      - eureka
+      - gateway
+      - configserver
+    environment:
+      - EUREKA_CLIENT_SERVICEURL_DEFAULTZONE=http://eureka:8765/eureka/
+    networks:
+      - microservices-network
+
+  nodejs-service:
+    build: ./OpenAI-Test-master
+    image: nodejs-service:latest
+    container_name: nodejs-service
+    ports:
+      - "5000:5000"
+    depends_on:
+      - eureka
+      - gateway
+    environment:
+      - EUREKA_CLIENT_SERVICEURL_DEFAULTZONE=http://eureka:8765/eureka/
+      - NODE_ENV=production
+    networks:
+      - microservices-network
+
+networks:
+  microservices-network:
+    driver: bridge

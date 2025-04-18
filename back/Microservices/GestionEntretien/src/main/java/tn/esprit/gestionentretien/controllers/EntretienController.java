@@ -4,11 +4,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import tn.esprit.gestionentretien.dtos.Vehicule;
 import tn.esprit.gestionentretien.entities.Entretien;
 import tn.esprit.gestionentretien.services.EntretienService;
 
 import java.util.List;
-
+@CrossOrigin("*")
 @RestController
 @RequestMapping("/api/entretien")
 public class EntretienController {
@@ -24,9 +25,9 @@ public class EntretienController {
         return new ResponseEntity<>(entretienService.getEntretienById(id),
                 HttpStatus.OK);
     }
-    @PostMapping("/add")
-    public ResponseEntity<Entretien> addEntretien(@RequestBody Entretien ent) {
-        return new ResponseEntity<>(entretienService.addEntretien(ent), HttpStatus.CREATED);
+    @PostMapping("/add/{id}")
+    public ResponseEntity<Entretien> addEntretien(@RequestBody Entretien ent, @PathVariable Long id) {
+        return new ResponseEntity<Entretien>(entretienService.addEntretien(ent,id), HttpStatus.CREATED);
     }
     @PutMapping("/update")
     public ResponseEntity<Entretien> updateEntretien(@RequestBody Entretien ent) {
@@ -37,4 +38,13 @@ public class EntretienController {
         entretienService.deleteEntretien(id);
         return new ResponseEntity<>("Successfully deleted", HttpStatus.OK);
     }
+    @RequestMapping("dorra/vehicules/{id}")
+    public Vehicule getVehiculeById(@PathVariable("id") Long id) {
+        return entretienService.getVehiculeById(id);
+    }
+    @GetMapping("/get-by-id-vehicule")
+    public List<Entretien> findByVehiculeId(@RequestParam("id") Long id) {
+        return entretienService.findByVehiculeId(id);
+    }
+
 }

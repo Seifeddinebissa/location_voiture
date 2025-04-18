@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="8bb1d1bc-75e7-48ab-bf7f-ab272c8e7fa1" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../../.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../back/Microservices/Gateway/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../back/Microservices/Gateway/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../back/Microservices/Gateway/src/main/java/tn/esprit/gateway/GatewayApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../back/Microservices/Gateway/src/main/java/tn/esprit/gateway/GatewayApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../back/Microservices/GestionEntretien/src/main/java/tn/esprit/gestionentretien/controllers/EntretienController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../back/Microservices/GestionEntretien/src/main/java/tn/esprit/gestionentretien/controllers/EntretienController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../back/Microservices/GestionEntretien/src/main/java/tn/esprit/gestionentretien/enums/Status.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../back/Microservices/GestionEntretien/src/main/java/tn/esprit/gestionentretien/enums/Status.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../front/location_voiture_front/.editorconfig" beforeDir="false" afterPath="$PROJECT_DIR$/../../front/location_voiture_front/.editorconfig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../front/location_voiture_front/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/../../front/location_voiture_front/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../front/location_voiture_front/.vscode/extensions.json" beforeDir="false" afterPath="$PROJECT_DIR$/../../front/location_voiture_front/.vscode/extensions.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../front/location_voiture_front/.vscode/launch.json" beforeDir="false" afterPath="$PROJECT_DIR$/../../front/location_voiture_front/.vscode/launch.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../front/location_voiture_front/.vscode/tasks.json" beforeDir="false" afterPath="$PROJECT_DIR$/../../front/location_voiture_front/.vscode/tasks.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../front/location_voiture_front/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../../front/location_voiture_front/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../front/location_voiture_front/angular.json" beforeDir="false" afterPath="$PROJECT_DIR$/../../front/location_voiture_front/angular.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../front/location_voiture_front/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/../../front/location_voiture_front/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../front/location_voiture_front/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/../../front/location_voiture_front/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../front/location_voiture_front/src/app/app-routing.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../../front/location_voiture_front/src/app/app-routing.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../front/location_voiture_front/src/app/app.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../front/location_voiture_front/src/app/app.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../front/location_voiture_front/src/app/app.component.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../../front/location_voiture_front/src/app/app.component.spec.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../front/location_voiture_front/src/app/app.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../../front/location_voiture_front/src/app/app.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../front/location_voiture_front/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../../front/location_voiture_front/src/app/app.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../front/location_voiture_front/src/app/back-office/back-office-routing.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../../front/location_voiture_front/src/app/back-office/back-office-routing.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../front/location_voiture_front/src/app/back-office/back-office.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../front/location_voiture_front/src/app/back-office/back-office.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../front/location_voiture_front/src/app/back-office/back-office.component.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../../front/location_voiture_front/src/app/back-office/back-office.component.spec.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../front/location_voiture_front/src/app/back-office/back-office.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../../front/location_voiture_front/src/app/back-office/back-office.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../front/location_voiture_front/src/app/back-office/back-office.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../../front/location_voiture_front/src/app/back-office/back-office.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../front/location_voiture_front/src/app/back-office/dashboard/dashboard.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../front/location_voiture_front/src/app/back-office/dashboard/dashboard.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../front/location_voiture_front/src/app/back-office/dashboard/dashboard.component.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../../front/location_voiture_front/src/app/back-office/dashboard/dashboard.component.spec.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../front/location_voiture_front/src/app/back-office/dashboard/dashboard.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../../front/location_voiture_front/src/app/back-office/dashboard/dashboard.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../front/location_voiture_front/src/app/front-office/front-office-routing.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../../front/location_voiture_front/src/app/front-office/front-office-routing.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../front/location_voiture_front/src/app/front-office/front-office.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../front/location_voiture_front/src/app/front-office/front-office.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../front/location_voiture_front/src/app/front-office/front-office.component.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../../front/location_voiture_front/src/app/front-office/front-office.component.spec.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../front/location_voiture_front/src/app/front-office/front-office.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../../front/location_voiture_front/src/app/front-office/front-office.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../front/location_voiture_front/src/app/front-office/front-office.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../../front/location_voiture_front/src/app/front-office/front-office.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../front/location_voiture_front/src/app/front-office/home/home.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../front/location_voiture_front/src/app/front-office/home/home.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../front/location_voiture_front/src/app/front-office/home/home.component.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../../front/location_voiture_front/src/app/front-office/home/home.component.spec.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../front/location_voiture_front/src/app/front-office/home/home.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../../front/location_voiture_front/src/app/front-office/home/home.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../front/location_voiture_front/src/assets/css/animate.css" beforeDir="false" afterPath="$PROJECT_DIR$/../../front/location_voiture_front/src/assets/css/animate.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../front/location_voiture_front/src/assets/css/bootstrap.css" beforeDir="false" afterPath="$PROJECT_DIR$/../../front/location_voiture_front/src/assets/css/bootstrap.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../front/location_voiture_front/src/assets/css/font-awesome.css" beforeDir="false" afterPath="$PROJECT_DIR$/../../front/location_voiture_front/src/assets/css/font-awesome.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../front/location_voiture_front/src/assets/css/magnific-popup.css" beforeDir="false" afterPath="$PROJECT_DIR$/../../front/location_voiture_front/src/assets/css/magnific-popup.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../front/location_voiture_front/src/assets/css/nice-select.css" beforeDir="false" afterPath="$PROJECT_DIR$/../../front/location_voiture_front/src/assets/css/nice-select.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../front/location_voiture_front/src/assets/css/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/../../front/location_voiture_front/src/assets/css/styles.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../front/location_voiture_front/src/assets/css/swiper-bundle.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/../../front/location_voiture_front/src/assets/css/swiper-bundle.min.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../front/location_voiture_front/src/assets/css2" beforeDir="false" afterPath="$PROJECT_DIR$/../../front/location_voiture_front/src/assets/css2" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../front/location_voiture_front/src/assets/fonts/fa-brands-400.svg" beforeDir="false" afterPath="$PROJECT_DIR$/../../front/location_voiture_front/src/assets/fonts/fa-brands-400.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../front/location_voiture_front/src/assets/fonts/fa-duotone-900.svg" beforeDir="false" afterPath="$PROJECT_DIR$/../../front/location_voiture_front/src/assets/fonts/fa-duotone-900.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../front/location_voiture_front/src/assets/fonts/fa-light-300.svg" beforeDir="false" afterPath="$PROJECT_DIR$/../../front/location_voiture_front/src/assets/fonts/fa-light-300.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../front/location_voiture_front/src/assets/fonts/fa-regular-400.svg" beforeDir="false" afterPath="$PROJECT_DIR$/../../front/location_voiture_front/src/assets/fonts/fa-regular-400.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../front/location_voiture_front/src/assets/fonts/fa-solid-900.svg" beforeDir="false" afterPath="$PROJECT_DIR$/../../front/location_voiture_front/src/assets/fonts/fa-solid-900.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../front/location_voiture_front/src/assets/fonts/fonts/autodeal.svg" beforeDir="false" afterPath="$PROJECT_DIR$/../../front/location_voiture_front/src/assets/fonts/fonts/autodeal.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../front/location_voiture_front/src/assets/fonts/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/../../front/location_voiture_front/src/assets/fonts/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../front/location_voiture_front/src/assets/images/dashboard/hide.svg" beforeDir="false" afterPath="$PROJECT_DIR$/../../front/location_voiture_front/src/assets/images/dashboard/hide.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../front/location_voiture_front/src/assets/images/dashboard/overview1.svg" beforeDir="false" afterPath="$PROJECT_DIR$/../../front/location_voiture_front/src/assets/images/dashboard/overview1.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../front/location_voiture_front/src/assets/images/dashboard/overview2.svg" beforeDir="false" afterPath="$PROJECT_DIR$/../../front/location_voiture_front/src/assets/images/dashboard/overview2.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../front/location_voiture_front/src/assets/images/dashboard/overview3.svg" beforeDir="false" afterPath="$PROJECT_DIR$/../../front/location_voiture_front/src/assets/images/dashboard/overview3.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../front/location_voiture_front/src/assets/images/dashboard/overview4.svg" beforeDir="false" afterPath="$PROJECT_DIR$/../../front/location_voiture_front/src/assets/images/dashboard/overview4.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../front/location_voiture_front/src/assets/images/dashboard/pen.svg" beforeDir="false" afterPath="$PROJECT_DIR$/../../front/location_voiture_front/src/assets/images/dashboard/pen.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../front/location_voiture_front/src/assets/images/dashboard/trash.svg" beforeDir="false" afterPath="$PROJECT_DIR$/../../front/location_voiture_front/src/assets/images/dashboard/trash.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../front/location_voiture_front/src/assets/js/bootstrap.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../front/location_voiture_front/src/assets/js/bootstrap.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../front/location_voiture_front/src/assets/js/chart.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../front/location_voiture_front/src/assets/js/chart.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../front/location_voiture_front/src/assets/js/dashboard.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../front/location_voiture_front/src/assets/js/dashboard.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../front/location_voiture_front/src/assets/js/infobox.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../front/location_voiture_front/src/assets/js/infobox.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../front/location_voiture_front/src/assets/js/jquery-ui.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../front/location_voiture_front/src/assets/js/jquery-ui.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../front/location_voiture_front/src/assets/js/jquery-validate.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../front/location_voiture_front/src/assets/js/jquery-validate.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../front/location_voiture_front/src/assets/js/jquery.easing.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../front/location_voiture_front/src/assets/js/jquery.easing.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../front/location_voiture_front/src/assets/js/jquery.fancybox.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../front/location_voiture_front/src/assets/js/jquery.fancybox.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../front/location_voiture_front/src/assets/js/jquery.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../front/location_voiture_front/src/assets/js/jquery.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../front/location_voiture_front/src/assets/js/jquery.nice-select.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../front/location_voiture_front/src/assets/js/jquery.nice-select.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../front/location_voiture_front/src/assets/js/lazysize.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../front/location_voiture_front/src/assets/js/lazysize.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../front/location_voiture_front/src/assets/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../front/location_voiture_front/src/assets/js/main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../front/location_voiture_front/src/assets/js/map-single.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../front/location_voiture_front/src/assets/js/map-single.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../front/location_voiture_front/src/assets/js/maps.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../front/location_voiture_front/src/assets/js/maps.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../front/location_voiture_front/src/assets/js/marker.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../front/location_voiture_front/src/assets/js/marker.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../front/location_voiture_front/src/assets/js/plugin.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../front/location_voiture_front/src/assets/js/plugin.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../front/location_voiture_front/src/assets/js/price-ranger.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../front/location_voiture_front/src/assets/js/price-ranger.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../front/location_voiture_front/src/assets/js/shortcodes.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../front/location_voiture_front/src/assets/js/shortcodes.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../front/location_voiture_front/src/assets/js/swiper-bundle.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../front/location_voiture_front/src/assets/js/swiper-bundle.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../front/location_voiture_front/src/assets/js/swiper.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../front/location_voiture_front/src/assets/js/swiper.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../front/location_voiture_front/src/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../front/location_voiture_front/src/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../front/location_voiture_front/src/main.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../../front/location_voiture_front/src/main.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../front/location_voiture_front/src/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/../../front/location_voiture_front/src/styles.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../front/location_voiture_front/tsconfig.app.json" beforeDir="false" afterPath="$PROJECT_DIR$/../../front/location_voiture_front/tsconfig.app.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../front/location_voiture_front/tsconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/../../front/location_voiture_front/tsconfig.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../front/location_voiture_front/tsconfig.spec.json" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Dockerfile" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN",
+    "assignee": "Seifeddinebissa"
+  }
+}]]></component>
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "git@github.com:Seifeddinebissa/location_voiture.git",
+    "accountId": "f7776dea-51bf-4356-9dd7-5a61d03e257e"
+  }
+}]]></component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 2
+}]]></component>
+  <component name="ProjectId" id="2vjtbEOR37CQ4ophcLdhJLQzDCg" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "main",
+    "kotlin-language-version-configured": "true",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-9823dce3aa75-125ca727e0f0-intellij.indexing.shared.core-IU-243.23654.189" />
+        <option value="bundled-js-predefined-d6986cc7102b-822845ee3bb5-JavaScript-IU-243.23654.189" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="8bb1d1bc-75e7-48ab-bf7f-ab272c8e7fa1" name="Changes" comment="" />
+      <created>1744670380522</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1744670380522</updated>
+      <workItem from="1744670381994" duration="1558000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>

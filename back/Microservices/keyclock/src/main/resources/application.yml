@@ -1,0 +1,31 @@
+spring:
+  application:
+    name: Keyclock
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: ${app.keycloak.serverUrl}/realms/${app.keycloak.realm}
+
+
+server:
+  port: 8087
+  servlet:
+    context-path: /auth
+
+
+
+app:
+  keycloak:
+    admin:
+      clientId: admin-cli
+      clientSecret: rJFYw7hNjcIT3J8wgZm7vxqauiDaHZ9k
+    realm: Amine
+    serverUrl: http://localhost:8080
+
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8765/eureka
+    register-with-eureka: true

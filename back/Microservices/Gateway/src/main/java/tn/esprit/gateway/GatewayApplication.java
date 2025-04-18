@@ -22,8 +22,18 @@ public class GatewayApplication {
                         .uri("lb://keyclock"))
                 .route("entretien",r->r.path("/api/**")
                         .uri("lb://GestionEntretien"))
+                .route("paiement",r->r.path("/Gestion_Paiement/**")
+                        .uri("lb://GestionPaiement"))
+                .route("reclamation",r->r.path("/Reclamation/**")
+                        .uri("lb://GestionReclamation"))
+                .route("vehicules",r->r.path("/dorra/vehicules/**")
+                        .uri("lb://GestionVehicule"))
+                .route("reservation",r->r.path("/reservation/**")
+                        .uri("lb://GestionReservation"))
+                .route("notification",r->r.path("/notifications/**")
+                        .uri("lb://notification"))
+                .route("openainodejs",r->r.path("/api/**")
+                        .uri("lb://OPENAI-SERVICE"))
                 .build();
-
-
     }
 }

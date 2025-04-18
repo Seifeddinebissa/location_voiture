@@ -1,0 +1,115 @@
+<div class="form-container">
+    <!-- Titre -->
+    <h1 class="form-title">
+      <i class="fas fa-plus-circle me-2"></i>
+      {{ isEditMode ? 'Modifier Réservation' : 'Ajouter Réservation' }}
+    </h1>
+  
+    <!-- Alerte pour messages de succès ou d'erreur -->
+    <div *ngIf="successMessage" class="alert alert-success">
+      <span>{{ successMessage }}</span>
+      <button type="button" class="alert-close" (click)="successMessage = null">
+        <i class="fas fa-window-close"></i>
+      </button>
+    </div>
+    <div *ngIf="errorMessage" class="alert alert-error">
+      <span>{{ errorMessage }}</span>
+      <button type="button" class="alert-close" (click)="errorMessage = null">
+        <i class="fas fa-window-close"></i>
+      </button>
+    </div>
+  
+    <!-- Formulaire -->
+    <div class="form-box">
+      <form #reservationForm="ngForm" (ngSubmit)="saveReservation()" class="form-content">
+        <!-- Champ Nom -->
+        <div class="form-group">
+          <label for="nom" class="form-label">
+            <i class="fas fa-address-card me-1"></i> Nom
+          </label>
+          <div class="input-wrapper">
+            <input
+              type="text"
+              id="nom"
+              [(ngModel)]="reservation.nom"
+              name="nom"
+              required
+              #nom="ngModel"
+              class="form-input"
+              placeholder="Entrez votre nom"
+              [ngClass]="{'invalid': nom.invalid && (nom.dirty || nom.touched)}"
+            />
+            <span class="input-icon"><i class="fas fa-user"></i></span>
+          </div>
+          <div *ngIf="nom.invalid && (nom.dirty || nom.touched)" class="error-message">
+            Le nom est requis.
+          </div>
+        </div>
+  
+        <!-- Date de début -->
+        <div class="form-group">
+          <label for="start_date" class="form-label">
+            <i class="fas fa-calendar-check me-1"></i> Date de début
+          </label>
+          <div class="input-wrapper">
+            <input
+              type="date"
+              id="start_date"
+              [(ngModel)]="reservation.start_date"
+              name="start_date"
+              required
+              #startDate="ngModel"
+              (ngModelChange)="validateDates()"
+              class="form-input"
+              [ngClass]="{'invalid': startDate.invalid && (startDate.dirty || startDate.touched)}"
+            />
+            <span class="input-icon"><i class="fas fa-calendar"></i></span>
+          </div>
+          <div *ngIf="startDate.invalid && (startDate.dirty || startDate.touched)" class="error-message">
+            La date de début est requise.
+          </div>
+        </div>
+  
+        <!-- Date de fin -->
+        <div class="form-group">
+          <label for="end_date" class="form-label">
+            <i class="fas fa-calendar-times me-1"></i> Date de fin
+          </label>
+          <div class="input-wrapper">
+            <input
+              type="date"
+              id="end_date"
+              [(ngModel)]="reservation.end_date"
+              name="end_date"
+              required
+              #endDate="ngModel"
+              (ngModelChange)="validateDates()"
+              class="form-input"
+              [ngClass]="{'invalid': endDate.invalid && (endDate.dirty || endDate.touched) || dateError}"
+            />
+            <span class="input-icon"><i class="fas fa-calendar"></i></span>
+          </div>
+          <div *ngIf="endDate.invalid && (endDate.dirty || endDate.touched)" class="error-message">
+            La date de fin est requise.
+          </div>
+          <div *ngIf="dateError" class="error-message">
+            La date de fin doit être postérieure à la date de début.
+          </div>
+        </div>
+  
+      
+  
+        <!-- Boutons -->
+        <div class="form-actions">
+          <button type="submit" class="btn btn-primary" [disabled]="reservationForm.invalid || dateError">
+            <i class="fas fa-check-circle me-1"></i>
+            <span>{{ isEditMode ? 'Mettre à jour' : 'Ajouter' }}</span>
+          </button>
+          <button type="button" class="btn btn-secondary" (click)="cancel()">
+            <i class="fas fa-times-circle me-1"></i>
+            <span>Annuler</span>
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>

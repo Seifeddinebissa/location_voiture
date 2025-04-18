@@ -8,11 +8,14 @@
         <option value="$PROJECT_DIR$/Microservices/Eureka/pom.xml" />
         <option value="$PROJECT_DIR$/Microservices/Gateway/pom.xml" />
         <option value="$PROJECT_DIR$/Microservices/keyclock/pom.xml" />
+        <option value="$PROJECT_DIR$/Microservices/GestionReservation/Eureka/pom.xml" />
+        <option value="$PROJECT_DIR$/Microservices/GestionReservation/GateWay/pom.xml" />
         <option value="$PROJECT_DIR$/Microservices/GestionReservation/pom.xml" />
+        <option value="$PROJECT_DIR$/back/Microservices/ConfigServer/pom.xml" />
       </list>
     </option>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_21" default="true" project-jdk-name="temurin-21" project-jdk-type="JavaSDK">
-    <output url="file://$PROJECT_DIR$/Microservices/ConfigServer" />
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_17" default="true" project-jdk-name="openjdk-22" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/out" />
   </component>
 </project>

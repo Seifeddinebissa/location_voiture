@@ -11,6 +11,7 @@ public class Reservation {
     @Id
     @GeneratedValue
     private Long id;
+    private  String nom;
     private Date start_date;
     private Date end_date;
     private  String status;
@@ -18,11 +19,20 @@ public class Reservation {
     public Reservation() {
     }
 
-    public Reservation(Long id, Date start_date, Date end_date, String status) {
+    public Reservation(Long id, String nom, Date start_date, Date end_date, String status) {
         this.id = id;
+        this.nom = nom;
         this.start_date = start_date;
         this.end_date = end_date;
         this.status = status;
+    }
+
+    public String getNom() {
+        return nom;
+    }
+
+    public void setNom(String nom) {
+        this.nom = nom;
     }
 
     public Long getId() {

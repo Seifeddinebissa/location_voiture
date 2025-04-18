@@ -1,0 +1,41 @@
+<div class="form-container">
+    <h1 class="form-title">
+      <i class="fas fa-list-alt me-2"></i> Mes Réservations
+    </h1>
+  
+    <div class="table-wrapper">
+      <table class="reservation-table">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Nom</th>
+            <th>Date de début</th>
+            <th>Date de fin</th>
+            <th>Statut</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let reservation of reservations">
+            <td>{{ reservation.id }}</td>
+            <td>{{ reservation.nom }}</td>
+            <td>{{ reservation.start_date | date:'mediumDate' }}</td>
+            <td>{{ reservation.end_date | date:'mediumDate' }}</td>
+            <td>
+              <span class="status-badge" [ngClass]="{
+                'status-confirmed': reservation.status === 'CONFIRMED',
+                'status-pending': reservation.status === 'PENDING',
+                'status-cancelled': reservation.status === 'CANCELLED'
+              }">
+                {{ reservation.status === 'CONFIRMED' ? 'Confirmé' : reservation.status === 'PENDING' ? 'En attente' : 'Annulé' }}
+              </span>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+  
+      <!-- Message si aucune réservation -->
+      <div *ngIf="reservations.length === 0" class="no-reservations">
+        <p>Aucune réservation trouvée.</p>
+      </div>
+    </div>
+  </div>

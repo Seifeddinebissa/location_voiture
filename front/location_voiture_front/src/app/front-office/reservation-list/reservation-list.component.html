@@ -1,0 +1,142 @@
+<div class="container">
+    <h1 class="admin-title">
+      <i class="fas fa-list me-2"></i> Liste des Réservations
+    </h1>
+  
+    <!-- Formulaire de modification -->
+    <div class="form-wrapper mb-4">
+      <h2 class="text-center mb-3">Modifier Réservation</h2>
+  
+      <form [formGroup]="reservationForm" (ngSubmit)="onSubmit()">
+        <div class="row">
+          <div class="col-md-4 mb-3">
+            <label for="nom" class="form-label"><i class="fas fa-user me-2"></i>Nom</label>
+            <input
+              type="text"
+              id="nom"
+              formControlName="nom"
+              class="form-control"
+              [ngClass]="{'is-invalid': reservationForm.get('nom')?.invalid && reservationForm.get('nom')?.touched}"
+            />
+            <div *ngIf="reservationForm.get('nom')?.invalid && reservationForm.get('nom')?.touched" class="invalid-feedback">
+              Le nom est requis.
+            </div>
+          </div>
+  
+          <div class="col-md-4 mb-3">
+            <label for="start_date" class="form-label"><i class="fas fa-calendar-alt me-2"></i>Date de début</label>
+            <input
+              type="date"
+              id="start_date"
+              formControlName="start_date"
+              class="form-control"
+              [ngClass]="{'is-invalid': (reservationForm.get('start_date')?.invalid || reservationForm.errors?.['invalidDateFormat']) && reservationForm.get('start_date')?.touched}"
+            />
+            <div *ngIf="reservationForm.get('start_date')?.invalid && reservationForm.get('start_date')?.touched" class="invalid-feedback">
+              La date de début est requise.
+            </div>
+            <div *ngIf="reservationForm.errors?.['invalidDateFormat'] && reservationForm.get('start_date')?.touched" class="invalid-feedback">
+              Format de date invalide.
+            </div>
+          </div>
+  
+          <div class="col-md-4 mb-3">
+            <label for="end_date" class="form-label"><i class="fas fa-calendar-alt me-2"></i>Date de fin</label>
+            <input
+              type="date"
+              id="end_date"
+              formControlName="end_date"
+              class="form-control"
+              [ngClass]="{'is-invalid': (reservationForm.get('end_date')?.invalid || reservationForm.errors?.['invalidDates'] || reservationForm.errors?.['invalidDateFormat']) && reservationForm.get('end_date')?.touched}"
+            />
+            <div *ngIf="reservationForm.get('end_date')?.invalid && reservationForm.get('end_date')?.touched" class="invalid-feedback">
+              La date de fin est requise.
+            </div>
+            <div *ngIf="reservationForm.errors?.['invalidDates'] && reservationForm.get('end_date')?.touched" class="invalid-feedback">
+              La date de fin doit être postérieure à la date de début.
+            </div>
+            <div *ngIf="reservationForm.errors?.['invalidDateFormat'] && reservationForm.get('end_date')?.touched" class="invalid-feedback">
+              Format de date invalide.
+            </div>
+          </div>
+        </div>
+  
+        <div class="d-flex justify-content-end gap-2">
+          <button type="submit" class="btn btn-primary" [disabled]="!isEditing || reservationForm.invalid || reservationForm.errors?.['invalidDates'] || reservationForm.errors?.['invalidDateFormat']">
+            Mettre à jour
+          </button>
+          <button type="button" class="btn btn-danger" (click)="resetForm()" [disabled]="!isEditing">
+            Annuler
+          </button>
+        </div>
+      </form>
+    </div>
+  
+    <!-- Messages -->
+    <div *ngIf="successMessage" class="alert alert-success">
+      {{ successMessage }}
+      <button type="button" class="alert-close" (click)="successMessage = null">
+        <i class="fas fa-times"></i>
+      </button>
+    </div>
+    <div *ngIf="errorMessage" class="alert alert-error">
+      {{ errorMessage }}
+      <button type="button" class="alert-close" (click)="errorMessage = null">
+        <i class="fas fa-times"></i>
+      </button>
+    </div>
+  
+    <!-- Liste des réservations -->
+    <div class="table-wrapper">
+      <table class="reservation-table">
+        <thead>
+          <tr>
+            <th>Nom</th>
+            <th>Date de début</th>
+            <th>Date de fin</th>
+            <th>Statut</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let reservation of reservations">
+            <td>{{ reservation.nom }}</td>
+            <td>{{ reservation.start_date | date:'mediumDate' }}</td>
+            <td>{{ reservation.end_date | date:'mediumDate' }}</td>
+            <td>
+              <span
+                class="status-badge"
+                [ngClass]="{
+                  'status-confirmed': reservation.status === 'CONFIRMED',
+                  'status-pending': reservation.status === 'PENDING',
+                  'status-cancelled': reservation.status === 'CANCELLED'
+                }"
+              >
+                {{ reservation.status === 'CONFIRMED' ? 'Confirmé' : reservation.status === 'PENDING' ? 'En attente' : reservation.status === 'CANCELLED' ? 'Annulé' : 'Non défini' }}
+              </span>
+            </td>
+            <td>
+              <button class="btn btn-sm btn-warning ms-2"
+                      (click)="editReservation(reservation)"
+                      [disabled]="reservation.status && reservation.status !== ''"
+                      title="Modification possible uniquement si le statut est non défini">
+                <i class="fas fa-edit"></i> Modifier
+              </button>
+              <button class="btn btn-sm btn-danger ms-2"
+                      (click)="deleteReservation(reservation)"
+                      [disabled]="reservation.status && reservation.status !== ''"
+                      title="Suppression possible uniquement si le statut est non défini">
+                <i class="fas fa-trash"></i> Supprimer
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+  
+      <!-- Message si aucune réservation -->
+      <div *ngIf="reservations.length === 0" class="no-reservations">
+        <p>Aucune réservation trouvée.</p>
+      </div>
+    </div>
+  </div>
+  

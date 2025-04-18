@@ -1,0 +1,120 @@
+<div class="form-wrapper">
+    <h1 class="admin-title">
+      <i class="fas fa-list me-2"></i> Liste des Réservations
+    </h1>
+  
+    <!-- Filtres et Recherche -->
+    <div class="filters">
+      <div class="filter-group">
+        <label for="statusFilter">Filtrer par statut :</label>
+        <select id="statusFilter" class="form-select" [(ngModel)]="statusFilter" (change)="filterReservations()">
+          <option value="">Tous</option>
+          <option value="CONFIRMED">Confirmé</option>
+          <option value="PENDING">En attente</option>
+          <option value="CANCELLED">Annulé</option>
+        </select>
+      </div>
+      <div class="search-group">
+        <input
+          type="text"
+          placeholder="Rechercher par nom..."
+          [(ngModel)]="searchQuery"
+          (input)="filterReservations()"
+          class="search-input"
+        />
+        <span class="search-icon"><i class="fas fa-search"></i></span>
+      </div>
+    </div>
+  
+    
+  
+    <!-- Alerte pour messages de succès ou d'erreur -->
+    <div *ngIf="successMessage" class="alert alert-success">
+      {{ successMessage }}
+      <button type="button" class="alert-close" (click)="successMessage = null">
+        <i class="fas fa-times"></i>
+      </button>
+    </div>
+    <div *ngIf="errorMessage" class="alert alert-error">
+      {{ errorMessage }}
+      <button type="button" class="alert-close" (click)="errorMessage = null">
+        <i class="fas fa-times"></i>
+      </button>
+    </div>
+  
+    <div class="table-wrapper">
+      <table class="reservation-table">
+        <thead>
+          <tr>
+            <th>Nom</th>
+            <th>Date de début</th>
+            <th>Date de fin</th>
+            <th>Statut</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let reservation of paginatedReservations">
+            <td>{{ reservation.nom }}</td>
+            <td>{{ reservation.start_date | date:'mediumDate' }}</td>
+            <td>{{ reservation.end_date | date:'mediumDate' }}</td>
+            <td>
+              <span
+                class="status-badge"
+                [ngClass]="{
+                  'status-confirmed': reservation.status === 'CONFIRMED',
+                  'status-pending': reservation.status === 'PENDING',
+                  'status-cancelled': reservation.status === 'CANCELLED'
+                }"
+              >
+                {{ reservation.status === 'CONFIRMED' ? 'Confirmé' : reservation.status === 'PENDING' ? 'En attente' : reservation.status === 'CANCELLED' ? 'Annulé' : '' }}
+              </span>
+            </td>
+            <td>
+              <select
+                class="form-select"
+                [ngClass]="{
+                  'status-confirmed': reservation.status === 'CONFIRMED',
+                  'status-pending': reservation.status === 'PENDING',
+                  'status-cancelled': reservation.status === 'CANCELLED'
+                }"
+                (change)="onStatusChange($event, reservation)"
+                [value]="reservation.status || ''"
+              >
+                <option value="" disabled selected>Sélectionner un statut</option>
+                <option value="CONFIRMED" class="status-confirmed-option">Confirmé</option>
+                <option value="PENDING" class="status-pending-option">En attente</option>
+                <option value="CANCELLED" class="status-cancelled-option">Annulé</option>
+              </select>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+  
+      <!-- Message si aucune réservation -->
+      <div *ngIf="filteredReservations.length === 0" class="no-reservations">
+        <p>Aucune réservation trouvée.</p>
+      </div>
+  
+      <!-- Contrôles de pagination -->
+      <div class="pagination" *ngIf="filteredReservations.length > 0">
+        <button
+          class="btn btn-secondary"
+          [disabled]="currentPage === 1"
+          (click)="previousPage()"
+        >
+          <i class="fas fa-chevron-left me-1"></i> Précédent
+        </button>
+        <span class="page-info">
+          Page {{ currentPage }} sur {{ totalPages }}
+        </span>
+        <button
+          class="btn btn-secondary"
+          [disabled]="currentPage === totalPages"
+          (click)="nextPage()"
+        >
+          Suivant <i class="fas fa-chevron-right me-1"></i>
+        </button>
+      </div>
+    </div>
+  </div>
